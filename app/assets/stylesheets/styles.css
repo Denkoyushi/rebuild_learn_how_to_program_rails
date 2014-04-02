@@ -24,3 +24,7 @@ select {
 .right {
   right: 50px;
 }
+
+body {
+  background-image: url("skulls.png");
+}
