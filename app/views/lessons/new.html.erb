@@ -1,0 +1,15 @@
+<h1>New Lesson</h1>
+
+<form action="/lessons" method="post">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="lesson[name]" type="text">
+  <label for="lesson_order_number">Order Number</label>
+  <input id="lesson_order_number " name="lesson[order_number]" type="int">
+  <label for="lesson_section_id">Section ID</label>
+  <input id="lesson_section_id" name="lesson[section_id]" type="int">
+  <br>
+  <label for="lesson_body">Text</label>
+  <textarea rows="20" cols="70" id="lesson_body" name="lesson[body]"></textarea>
+  <button>Create Lesson</button>
+</form>
+

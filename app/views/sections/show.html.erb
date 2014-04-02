@@ -1,0 +1,17 @@
+<h1> <%= @section.name %> </h1>
+
+<ul>
+  <% @lessons.sort_by! { |lesson| lesson.order_number } %>
+  <% @lessons.each do |lesson| %>
+    <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/sections/<%= @section.id %>/edit"><button>Edit this Section</button></a>
+
+<a href="/sections/<%= @section.id %>"
+   data-confirm="You sure?"
+   data-method="delete"
+   rel="nofollow"><button>Delete Section</button></a>
+
+<a href="/"><button>Table of Contents</button></a>

@@ -1,0 +1,23 @@
+<h1> <%= @lesson.name %> </h1>
+
+<p> <%= @lesson.body %> </p>
+
+<a href="/lessons/<%= @lesson.id %>/edit"><button>Edit this Lesson</button></a>
+
+<a href="/lessons/<%= @lesson.id %>"
+   data-confirm="You sure?"
+   data-method="delete"
+   rel="nofollow"><button>Delete Lesson</button></a>
+
+<% if @lesson.previous != nil %>
+  <a href="/lessons/<%= @lesson.previous.id %>"><button>Previous Lesson</button></a>
+<% end %>
+<% if @lesson.next != nil %>
+  <a href="/lessons/<%= @lesson.next.id %>"><button>Next Lesson</button></a>
+<% end %>
+
+<a href="/"><button>Table of Contents</button></a>
+
+
+
+
