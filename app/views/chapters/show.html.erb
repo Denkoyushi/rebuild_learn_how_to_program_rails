@@ -1,0 +1,21 @@
+<h1> <%= @chapter.name %> </h1>
+
+<ul>
+  <% @chapter.sections.order(:order_number).each do |section| %>
+   <li><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
+   <ul>
+      <% section.lessons.order(:order_number).each do |lesson| %>
+      <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+      <% end %>
+   </ul>
+  <% end %>
+</ul>
+
+<a href="/chapters/<%= @chapter.id %>/edit"><button>Edit this Chapter</button></a>
+
+<a href="/chapters/<%= @chapter.id %>"
+   data-confirm="You sure?"
+   data-method="delete"
+   rel="nofollow"><button>Delete Chapter</button></a>
+
+<a href="/"><button>Table of Contents</button></a>

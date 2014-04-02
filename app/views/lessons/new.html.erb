@@ -5,8 +5,12 @@
   <input id="lesson_name" name="lesson[name]" type="text">
   <label for="lesson_order_number">Order Number</label>
   <input id="lesson_order_number " name="lesson[order_number]" type="int">
-  <label for="lesson_section_id">Section ID</label>
-  <input id="lesson_section_id" name="lesson[section_id]" type="int">
+  <input name="lesson[section_id]" type="hidden">
+  <select name="lesson[section_id]">
+    <% @sections.each do |section| %>
+      <option value="<%= section.id %>"><%= section.name %></option>
+    <% end %>
+  </select>
   <br>
   <label for="lesson_body">Text</label>
   <textarea rows="20" cols="70" id="lesson_body" name="lesson[body]"></textarea>

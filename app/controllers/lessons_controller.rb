@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
-    @sections = Section.all
+    @chapters = Chapter.all.order(order_number: :asc)
     render('lessons/index.html.erb')
   end
 
@@ -11,6 +10,7 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @sections = Section.all
     render('lessons/new.html.erb')
   end
 
@@ -20,6 +20,7 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    @sections = Section.all
     @lesson = Lesson.find(params[:id])
     render('lessons/edit.html.erb')
   end

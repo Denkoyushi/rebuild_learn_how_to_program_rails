@@ -3,13 +3,16 @@
 
 
 <ul>
-  <% @sections.sort_by! { |section| section.order_number } %>
-  <% @sections.each do |section| %>
-    <li><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
+  <% @chapters.each do |chapter| %>
+  <li><a href="/chapters/<%= chapter.id %>"><%= chapter.name %></a></li>
     <ul>
-      <% section.lessons.sort_by! { |lesson| lesson.order_number } %>
-      <% section.lessons.each do |lesson| %>
-        <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+      <% chapter.sections.order(:order_number).each do |section| %>
+       <li><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
+       <ul>
+          <% section.lessons.order(:order_number).each do |lesson| %>
+          <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+          <% end %>
+       </ul>
       <% end %>
     </ul>
   <% end %>
@@ -19,3 +22,6 @@
 <a href="lessons/new"><button>Make new Lesson</button></a>
 
 <a href="sections/new"><button>Make new Section</button></a>
+
+<a href="chapters/new"><button>Make new Chapter</button></a>
+

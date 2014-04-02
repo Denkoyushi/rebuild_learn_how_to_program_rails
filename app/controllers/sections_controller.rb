@@ -1,7 +1,6 @@
 class SectionsController < ApplicationController
   def index
-    @sections = Section.all
-    @lessons = Lesson.all
+    @chapters = Chapter.all.order(order_number: :asc)
     render('lessons/index.html.erb')
   end
 
