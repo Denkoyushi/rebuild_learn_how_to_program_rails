@@ -1,11 +1,15 @@
+<div class="container">
+
 <h1>New Section</h1>
 
-<form action="/sections" method="post">
+<form class="form-horizontal" action="/sections" method="post">
   <label for="section_name">Name</label>
-  <input id="section_name" name="section[name]" type="text">
+  <input id="section_name" class="form-control" name="section[name]" type="text">
   <label for="section_order_number">Order Number</label>
-  <input id="section_order_number " name="section[order_number]" type="int">
+  <input id="section_order_number" class="form-control" name="section[order_number]" type="int">
   <label for="section_chapter_id">Chapter ID</label>
-  <input id="section_chapter_id" name="section[chapter_id]" type="int">
-  <button>Create section</button>
+  <input id="section_chapter_id" class="form-control" name="section[chapter_id]" type="int">
+  <button class="btn btn-success">Create section</button>
 </form>
+
+</div>

@@ -1,19 +1,21 @@
+<div class="container">
 <h1>New Lesson</h1>
 
-<form action="/lessons" method="post">
+<form class="form-horizontal" action="/lessons" method="post">
   <label for="lesson_name">Name</label>
-  <input id="lesson_name" name="lesson[name]" type="text">
+  <input id="lesson_name" class="form-control" name="lesson[name]" type="text">
   <label for="lesson_order_number">Order Number</label>
-  <input id="lesson_order_number " name="lesson[order_number]" type="int">
-  <input name="lesson[section_id]" type="hidden">
-  <select name="lesson[section_id]">
+  <input id="lesson_order_number" class="form-control" name="lesson[order_number]" type="int">
+  <input name="lesson[section_id]" class="form-control" type="hidden">
+  <select name="lesson[section_id]" class="form-control">
     <% @sections.each do |section| %>
       <option value="<%= section.id %>"><%= section.name %></option>
     <% end %>
   </select>
   <br>
   <label for="lesson_body">Text</label>
-  <textarea rows="20" cols="70" id="lesson_body" name="lesson[body]"></textarea>
-  <button>Create Lesson</button>
+  <textarea class="form-control" rows="4" id="lesson_body" name="lesson[body]"></textarea>
+  <button class="btn btn-success">Create Lesson</button>
 </form>
 
+</div>

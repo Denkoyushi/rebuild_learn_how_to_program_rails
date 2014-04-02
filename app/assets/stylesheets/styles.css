@@ -1,0 +1,26 @@
+.bigtext {
+  vertical-align: text-top;
+}
+
+button {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+select {
+  margin-top: 20px;
+}
+
+.foot {
+  position:absolute;
+  bottom:0px;
+  margin-bottom: 20px;
+}
+
+.left {
+  left: 50px;
+}
+
+.right {
+  right: 50px;
+}

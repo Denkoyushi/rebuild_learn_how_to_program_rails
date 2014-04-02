@@ -1,13 +1,14 @@
-<h1>Table of Contents</h1>
+<div class="container">
 
+<h1>Table of Contents</h1>
 
 
 <ul>
   <% @chapters.each do |chapter| %>
-  <li><a href="/chapters/<%= chapter.id %>"><%= chapter.name %></a></li>
+  <li class="lesson"><a href="/chapters/<%= chapter.id %>"><%= chapter.name %></a></li>
     <ul>
       <% chapter.sections.order(:order_number).each do |section| %>
-       <li><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
+       <li class="section"><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
        <ul>
           <% section.lessons.order(:order_number).each do |lesson| %>
           <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
@@ -19,9 +20,9 @@
 </ul>
 
 
-<a href="lessons/new"><button>Make new Lesson</button></a>
+<a href="lessons/new"><button class="btn btn-primary">Make new Lesson</button></a>
 
-<a href="sections/new"><button>Make new Section</button></a>
+<a href="sections/new"><button class="btn btn-primary">Make new Section</button></a>
 
-<a href="chapters/new"><button>Make new Chapter</button></a>
-
+<a href="chapters/new"><button class="btn btn-primary">Make new Chapter</button></a>
+</div>

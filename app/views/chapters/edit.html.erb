@@ -1,10 +1,14 @@
+<div class="container">
+
 <h1>Edit Chapter</h1>
 
-<form action="/chapters/<%= @chapter.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
+<form class="form-horizontal" action="/chapters/<%= @chapter.id %>" method="post">
+  <input name="_method" class="form-control" type="hidden" value="patch">
   <label for="chapter_name">Name</label>
-  <input id="chapter_name" name="chapter[name]" type="text" value="<%= @chapter.name %>">
+  <input id="chapter_name" class="form-control" name="chapter[name]" type="text" value="<%= @chapter.name %>">
   <label for="chapter_order_number">Number</label>
-  <input id="chapter_order_number " name="chapter[order_number]" type="int" value="<%= @chapter.order_number %>">
-  <button>Update chapter</button>
+  <input id="chapter_order_number" class="form-control" name="chapter[order_number]" type="int" value="<%= @chapter.order_number %>">
+  <button class="btn btn-warning">Update chapter</button>
 </form>
+
+</div>

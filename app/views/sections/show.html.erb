@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1> <%= @section.name %> </h1>
 
 <ul>
@@ -7,11 +9,13 @@
   <% end %>
 </ul>
 
-<a href="/sections/<%= @section.id %>/edit"><button>Edit this Section</button></a>
+<a href="/sections/<%= @section.id %>/edit"><button class="btn btn-warning">Edit this Section</button></a>
 
 <a href="/sections/<%= @section.id %>"
    data-confirm="You sure?"
    data-method="delete"
-   rel="nofollow"><button>Delete Section</button></a>
+   rel="nofollow"><button class="btn btn-danger">Delete Section</button></a>
 
-<a href="/"><button>Table of Contents</button></a>
+<a href="/"><button class="btn btn-primary">Table of Contents</button></a>
+
+</div>
