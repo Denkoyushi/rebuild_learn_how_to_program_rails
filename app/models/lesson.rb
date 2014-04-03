@@ -3,10 +3,10 @@ class Lesson < ActiveRecord::Base
   belongs_to :section
 
   def next
-    @next_lesson = Lesson.where(:order_number => self.order_number + 1).first
+    @next_lesson = Lesson.order(:order_number).detect { |lesson| lesson.order_number > self.order_number }
   end
 
   def previous
-    @previous_lesson = Lesson.where(:order_number => self.order_number - 1).first
+    @previous_lesson = Lesson.order(order_number: :desc).detect { |lesson| lesson.order_number < self.order_number }
   end
 end

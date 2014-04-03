@@ -28,3 +28,11 @@ select {
 body {
   background-image: url("skulls.png");
 }
+
+.front {
+  margin-bottom: 10px;
+}
+
+.front-form {
+  width: 200px;
+}

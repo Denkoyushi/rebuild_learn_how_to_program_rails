@@ -1,5 +1,7 @@
 class LessonsController < ApplicationController
   def index
+    @results = Lesson.basic_search(:body => params[:query])
+    @search_term = params[:query]
     @chapters = Chapter.all.order(order_number: :asc)
     render('lessons/index.html.erb')
   end

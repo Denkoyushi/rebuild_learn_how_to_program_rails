@@ -4,7 +4,22 @@
 
 <h1>Table of Contents</h1>
 
+<p>Search for:</p>
+<form action="/lessons/search" method="post">
+  <input id="search_string" class="form-control front-form" name="query" type="text">
+  <button class="btn btn-primary front">Search</button>
+</form>
 
+<% if @results.count != 0 %>
+  <h3>Search results containing '<%= @search_term %>':</h3>
+  <ul>
+    <% @results.each do |result| %>
+      <li><a href="/lessons/<%= result.id %>"><%= result.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @results.count == 0 %>
 <ul>
   <% @chapters.each do |chapter| %>
   <li class="lesson"><a href="/chapters/<%= chapter.id %>"><%= chapter.name %></a></li>
@@ -20,7 +35,7 @@
     </ul>
   <% end %>
 </ul>
-
+<% end %>
 
 <a href="lessons/new"><button class="btn btn-success front">Make new Lesson</button></a>
 

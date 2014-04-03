@@ -4,6 +4,7 @@ LearnHowToProgram::Application.routes.draw do
 
   match('lessons', {:via => :get, :to => 'lessons#index'})
   match('lessons', {:via => :post, :to => 'lessons#create'})
+  match('lessons/search', {:via => :post, :to => 'lessons#index'})
   match('lessons/new', {:via => :get, :to => 'lessons#new'})
   match('lessons/:id', {:via => :get, :to => 'lessons#show'})
   match('lessons/:id/edit', {:via => :get, :to => 'lessons#edit'})
